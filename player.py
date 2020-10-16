@@ -1,4 +1,5 @@
 
+from direction import Direction
 import turtle
 import math
 import random
@@ -12,28 +13,25 @@ class Player(turtle.Turtle):
         self.penup()
         self.speed()
         self.fd(0)
-        self.right=1
-        self.left=0
-        self.up=0
-        self.down=0
+        self.direction=Direction.right
         self.kill=0
+
+    def setDirection(self, direction):
+        self.direction = direction
+        if direction == Direction.right:
+            self.setheading(0)
+        elif direction == Direction.up:
+            self.setheading(90)
+        elif direction == Direction.left:
+            self.setheading(180)
+        elif direction == Direction.down:
+            self.setheading(270)
 
     def headright(self,proj,bob):
 
-        if self.right==1:
+        if self.direction == Direction.right:
             pass
-
-        if self.down==1:
-            self.down=0
-            self.right=1         
-            
-        if self.left==1:
-            self.left=0
-            self.right=1
-
-        if self.up==1:
-            self.up=0
-            self.right=1
+        self.setDirection(Direction.right)
 
         self.shape(".\\art\\heroright.gif")
         proj.shape(".\\art\\arrowright.gif")
@@ -42,48 +40,19 @@ class Player(turtle.Turtle):
 
     def headdown(self,proj,bob):
 
-        if self.down==1:
+        if self.direction == Direction.down:
             pass
-
-        if self.left==1:
-            
-            self.left=0
-            self.down=1
-
-
-        if self.up==1:
-            
-            self.up=0
-            self.down=1
-    
-        if self.right==1:
-            
-            self.right=0
-            self.down=1
-
+        self.setDirection(Direction.down)
+ 
         self.shape(".\\art\\herodown.gif")
         proj.shape(".\\art\\arrowdown.gif")
         proj.fire(self,bob)
 
     def headleft(self,proj,bob):
 
-        if self.left==1:
+        if self.direction == Direction.left:
             pass
-
-        if self.up==1:
-            
-            self.up=0
-            self.left=1
-
-        if self.right==1:
-            
-            self.right=0
-            self.left=1
-
-        if self.down==1:
-            
-            self.down=0
-            self.left=1
+        self.setDirection(Direction.left)
 
         self.shape(".\\art\\heroleft.gif")
         proj.shape(".\\art\\arrowleft.gif")
@@ -91,23 +60,9 @@ class Player(turtle.Turtle):
             
     def headup(self,proj,bob):
           
-        if self.up==1:
+        if self.direction == Direction.up:
             pass
-
-        if self.right==1:
-            
-            self.right=0
-            self.up=1
-
-        if self.down==1:
-            
-            self.down=0
-            self.up=1
-
-        if self.left==1:
-            
-            self.left=0
-            self.up=1
+        self.setDirection(Direction.up)
             
         self.shape(".\\art\\heroup.gif")
         proj.shape(".\\art\\arrowup.gif")
@@ -116,23 +71,9 @@ class Player(turtle.Turtle):
 
     def go_up(self,block):
 
-        if self.up==1:
+        if self.direction == Direction.up:
             pass
-
-        if self.right==1:
-            
-            self.right=0
-            self.up=1
-
-        if self.down==1:
-            
-            self.down=0
-            self.up=1
-
-        if self.left==1:
-            
-            self.left=0
-            self.up=1
+        self.setDirection(Direction.up)
 
         move_to_x = self.xcor()
         move_to_y = self.ycor()+24
@@ -146,24 +87,9 @@ class Player(turtle.Turtle):
 
     def go_down(self,block):
 
-        if self.down==1:
+        if self.direction == Direction.down:
             pass
-
-        if self.left==1:
-            
-            self.left=0
-            self.down=1
-
-
-        if self.up==1:
-            
-            self.up=0
-            self.down=1
-    
-        if self.right==1:
-            
-            self.right=0
-            self.down=1
+        self.setDirection(Direction.down)
         
         move_to_x = self.xcor()
         move_to_y = self.ycor()-24
@@ -175,23 +101,9 @@ class Player(turtle.Turtle):
         
     def go_left(self,block):
 
-        if self.left==1:
+        if self.direction == Direction.left:
             pass
-
-        if self.up==1:
-            
-            self.up=0
-            self.left=1
-
-        if self.right==1:
-            
-            self.right=0
-            self.left=1
-
-        if self.down==1:
-            
-            self.down=0
-            self.left=1
+        self.setDirection(Direction.left)
             
         move_to_x = self.xcor()-24
         move_to_y = self.ycor()
@@ -202,20 +114,9 @@ class Player(turtle.Turtle):
         
     def go_right(self,block):
 
-        if self.right==1:
+        if self.direction == Direction.right:
             pass
-
-        if self.down==1:
-            self.down=0
-            self.right=1         
-            
-        if self.left==1:
-            self.left=0
-            self.right=1
-
-        if self.up==1:
-            self.up=0
-            self.right=1
+        self.setDirection(Direction.right)
         
         move_to_x = self.xcor()+24
         move_to_y = self.ycor()
