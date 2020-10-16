@@ -35,12 +35,12 @@ class Missile(turtle.Turtle):
             return False
             
 
-    def fire(self,log,mom):
+    def fire(self,log,game_over):
          if self.status == "ready":
             self.goto(log.xcor(), log.ycor())
             self.setheading(log.heading())
             self.status = "firing"
-            if mom != 3:
+            if game_over == False:
                 winsound.PlaySound(".\\sound\\swing.wav", winsound.SND_ASYNC)     
             
     def move(self,log,block):
@@ -103,12 +103,12 @@ class Missile2(turtle.Turtle):
             return False
             
 
-    def fire(self,log,mom):
+    def fire(self,log,game_over):
          if self.status == "ready":
             self.goto(log.xcor(), log.ycor())
             self.setheading(log.heading())
             self.status = "firing"
-            if mom != 3:
+            if game_over == False:
                 winsound.PlaySound(".\\sound\\fireball.wav", winsound.SND_ASYNC)
 
             

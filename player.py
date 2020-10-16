@@ -27,7 +27,7 @@ class Player(turtle.Turtle):
         elif direction == Direction.down:
             self.setheading(270)
 
-    def headright(self,proj,bob):
+    def headright(self,proj,game_over):
 
         if self.direction == Direction.right:
             pass
@@ -35,10 +35,10 @@ class Player(turtle.Turtle):
 
         self.shape(".\\art\\heroright.gif")
         proj.shape(".\\art\\arrowright.gif")
-        proj.fire(self,bob)
+        proj.fire(self,game_over)
 
 
-    def headdown(self,proj,bob):
+    def headdown(self,proj,game_over):
 
         if self.direction == Direction.down:
             pass
@@ -46,9 +46,9 @@ class Player(turtle.Turtle):
  
         self.shape(".\\art\\herodown.gif")
         proj.shape(".\\art\\arrowdown.gif")
-        proj.fire(self,bob)
+        proj.fire(self,game_over)
 
-    def headleft(self,proj,bob):
+    def headleft(self,proj,game_over):
 
         if self.direction == Direction.left:
             pass
@@ -56,9 +56,9 @@ class Player(turtle.Turtle):
 
         self.shape(".\\art\\heroleft.gif")
         proj.shape(".\\art\\arrowleft.gif")
-        proj.fire(self,bob)
+        proj.fire(self,game_over)
             
-    def headup(self,proj,bob):
+    def headup(self,proj,game_over):
           
         if self.direction == Direction.up:
             pass
@@ -66,7 +66,7 @@ class Player(turtle.Turtle):
             
         self.shape(".\\art\\heroup.gif")
         proj.shape(".\\art\\arrowup.gif")
-        proj.fire(self,bob)
+        proj.fire(self,game_over)
  
 
     def go_up(self,block):
@@ -143,11 +143,11 @@ class Player(turtle.Turtle):
         else:
             pass
             
-    def fireball(self,proj2,info,bob):
+    def fireball(self,proj2,info,game_over):
         if info.fire_scroll>0:
             info.fire_scroll-=1
             info.show_fire_scroll()
-            proj2.fire(self,bob)
+            proj2.fire(self,game_over)
             
         else:
             pass

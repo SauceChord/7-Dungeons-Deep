@@ -35,7 +35,7 @@ for i in range(15):
         particles.append(Particle("circle", "red", 0, 0))
         
 mission=0
-lives=0
+game_over=False
 quests2=[]
 quests=[]
 quest_items=[]
@@ -209,17 +209,17 @@ turtle.onkey((lambda:player.go_left(walls)), "Left")
 turtle.onkey((lambda:player.go_right(walls)), "Right")
 turtle.onkey((lambda:player.go_up(walls)), "Up")
 turtle.onkey((lambda:player.go_down(walls)), "Down")
-turtle.onkey((lambda:player.headright(missile,lives)), "d")
-turtle.onkey((lambda:player.headleft(missile,lives)), "a")
-turtle.onkey((lambda:player.headdown(missile,lives)),"s")
-turtle.onkey((lambda:player.headup(missile,lives)),"w")
-turtle.onkey((lambda:player.headright(missile,lives)),"D")
-turtle.onkey((lambda:player.headleft(missile,lives)), "A")
-turtle.onkey((lambda:player.headdown(missile,lives)),"S")
-turtle.onkey((lambda:player.headup(missile,lives)),"W")
+turtle.onkey((lambda:player.headright(missile,game_over)), "d")
+turtle.onkey((lambda:player.headleft(missile,game_over)), "a")
+turtle.onkey((lambda:player.headdown(missile,game_over)),"s")
+turtle.onkey((lambda:player.headup(missile,game_over)),"w")
+turtle.onkey((lambda:player.headright(missile,game_over)),"D")
+turtle.onkey((lambda:player.headleft(missile,game_over)), "A")
+turtle.onkey((lambda:player.headdown(missile,game_over)),"S")
+turtle.onkey((lambda:player.headup(missile,game_over)),"W")
 turtle.onkey((lambda:player.drink(info)),"space")
-turtle.onkey((lambda:player.fireball(missile2,info,lives)),"z")
-turtle.onkey((lambda:player.fireball(missile2,info,lives)),"Z")
+turtle.onkey((lambda:player.fireball(missile2,info,game_over)),"z")
+turtle.onkey((lambda:player.fireball(missile2,info,game_over)),"Z")
 
 for enemy in enemies:
     turtle.ontimer(enemy.move,t=250)
@@ -342,7 +342,7 @@ while True:
             player.destroy()
             crown.destroy()
             crowns.remove(crown)
-            lives=3
+            game_over=True
             game.win(player)
                        
             
