@@ -180,7 +180,7 @@ missile2 = Missile2(0,0,player)
 
 
 setup_maze(levels[1])
-maze=("level1")
+maze=1
 # Reason why there is both info and game, at some point when i had one it just
 #stopped working
 
@@ -522,40 +522,9 @@ while True:
                 
             winsound.PlaySound(".\\sound\\unlock.wav", winsound.SND_ASYNC)
             
-            if maze==("level1"):
-            
-                setup_maze(levels[2])
-                maze=("level2")
-           
-                
-            elif maze ==("level2"):
-                setup_maze(levels[3])
-                maze=("level3")
-                
-                
-            elif maze==("level3"):
-                setup_maze(levels[4])
-                maze=("level4")
-                
-
-            elif maze==("level4"):
-                setup_maze(levels[5])
-                maze=("level5")
-
-            elif maze==("level5"):
-                setup_maze(levels[6])
-                maze=("level6")
-
-            elif maze==("level6"):
-                setup_maze(levels[7])
-                maze=("level7")
-
-            elif maze==("level7"):
-                setup_maze(levels[8])
-                maze=("level8")  
-                   
-            else:
-                pass
+            if maze < 8:
+                maze += 1
+                setup_maze(levels[maze])
              
             for enemy in enemies:
                 turtle.ontimer(enemy.move,t=250)
