@@ -24,17 +24,14 @@ class Player(turtle.Turtle):
             pass
 
         if self.down==1:
-            self.rt(270)
             self.down=0
             self.right=1         
             
         if self.left==1:
-            self.rt(180)
             self.left=0
             self.right=1
 
         if self.up==1:
-            self.rt(90)
             self.up=0
             self.right=1
 
@@ -50,20 +47,17 @@ class Player(turtle.Turtle):
 
         if self.left==1:
             
-            self.rt(270)
             self.left=0
             self.down=1
 
 
         if self.up==1:
             
-            self.rt(180)
             self.up=0
             self.down=1
     
         if self.right==1:
             
-            self.rt(90)
             self.right=0
             self.down=1
 
@@ -78,19 +72,16 @@ class Player(turtle.Turtle):
 
         if self.up==1:
             
-            self.rt(270)
             self.up=0
             self.left=1
 
         if self.right==1:
             
-            self.rt(180)
             self.right=0
             self.left=1
 
         if self.down==1:
             
-            self.rt(90)
             self.down=0
             self.left=1
 
@@ -105,19 +96,16 @@ class Player(turtle.Turtle):
 
         if self.right==1:
             
-            self.rt(270)
             self.right=0
             self.up=1
 
         if self.down==1:
             
-            self.rt(180)
             self.down=0
             self.up=1
 
         if self.left==1:
             
-            self.rt(90)
             self.left=0
             self.up=1
             
@@ -133,19 +121,16 @@ class Player(turtle.Turtle):
 
         if self.right==1:
             
-            self.rt(270)
             self.right=0
             self.up=1
 
         if self.down==1:
             
-            self.rt(180)
             self.down=0
             self.up=1
 
         if self.left==1:
             
-            self.rt(90)
             self.left=0
             self.up=1
 
@@ -166,20 +151,17 @@ class Player(turtle.Turtle):
 
         if self.left==1:
             
-            self.rt(270)
             self.left=0
             self.down=1
 
 
         if self.up==1:
             
-            self.rt(180)
             self.up=0
             self.down=1
     
         if self.right==1:
             
-            self.rt(90)
             self.right=0
             self.down=1
         
@@ -198,19 +180,16 @@ class Player(turtle.Turtle):
 
         if self.up==1:
             
-            self.rt(270)
             self.up=0
             self.left=1
 
         if self.right==1:
             
-            self.rt(180)
             self.right=0
             self.left=1
 
         if self.down==1:
             
-            self.rt(90)
             self.down=0
             self.left=1
             
@@ -227,17 +206,14 @@ class Player(turtle.Turtle):
             pass
 
         if self.down==1:
-            self.rt(270)
             self.down=0
             self.right=1         
             
         if self.left==1:
-            self.rt(180)
             self.left=0
             self.right=1
 
         if self.up==1:
-            self.rt(90)
             self.up=0
             self.right=1
         
